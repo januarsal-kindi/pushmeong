@@ -8,7 +8,7 @@ import Home from '../src/components/views/Home.vue';
 
 // Tell Jest to use the mock
 // implementation of the store.
-jest.mock('../src/store');
+jest.mock('../src/store/Index.js');
 
 const localVue = createLocalVue();
 
