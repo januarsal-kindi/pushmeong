@@ -15,6 +15,7 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 localVue.use(BootstrapVue)
 
+
 describe('testing home', () => {
     let storeMocks;
     let wrapper;
