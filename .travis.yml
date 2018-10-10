@@ -16,9 +16,8 @@ before-script :
   - sonar-scanner
 
 script:
-  -npm run test
-  -npm run build
-
+  -npm run test 
+  -npm run-script build
 
 cache:
   directories:
