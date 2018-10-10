@@ -12,10 +12,9 @@ addons:
 install:
   - npm install
 
-before-script : 
-  - sonar-scanner
 
 script:
+  - sonar-scanner
   - npm run test 
 
 after_success:
