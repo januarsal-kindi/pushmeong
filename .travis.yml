@@ -1,0 +1,25 @@
+language: node_js
+
+node_js:
+  - "10"
+
+addons:
+  sonarcloud:
+    organization: "januarsal-kindi-github"
+    token:
+      secure: "0cdc1fffe144882a9a935c09c009ac1671caafff"
+      
+install:
+  - npm install
+
+before-script : 
+  - sonar-scanner
+
+script:
+  -npm run test
+  -npm run build
+
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
