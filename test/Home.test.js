@@ -1,5 +1,5 @@
 import Vuex from 'vuex';
-import { shallow, createLocalVue,shallowMount } from '@vue/test-utils';
+import { createLocalVue,shallowMount } from '@vue/test-utils';
 import { __createMocks as createStoreMocks } from './__mocks__/index';
 import BootstrapVue from 'bootstrap-vue'
 import Card from '../src/components/Home/Card.vue'
@@ -34,10 +34,10 @@ describe('testing home', () => {
         expect(storeMocks.actions.fetchpost).toBeCalled();
     });
 
+
     test('sum lenght item', () => {
-        console.log(storeMocks.getters.getpostcount)
         let item = wrapper.findAll(Card);
-        expect(item).toHaveLength(storeMocks.getters.getpostcount());
+        expect(item).toHaveLength(3);
     });
 
 })
