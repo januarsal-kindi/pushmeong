@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { FETCH_POST,GET_POST,GET_POST_COUNT,GET_POST_IS_LOADING } from '../../store/Type.js'
+
 export default {
   name: 'hello',
   computed: {
