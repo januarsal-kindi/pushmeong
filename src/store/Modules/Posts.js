@@ -8,19 +8,19 @@ const state = {
 };
 
 const getters = {
-  getpostcount(state) {
+  getPostCount(state) {
     return state.postCount;
   },
-  getposts(state) {
+  getPosts(state) {
     return state.posts;
   },
-  getisloadingpost(state) {
+  getIsLoadingPost(state) {
     return state.isLoading;
   }
 };
 
 const actions = {
-  fetchpost({ commit }) {
+  fetchPost({ commit }) {
     commit('FETCH_START');
     return PostsServices.get('')
       .then(({ data }) => {

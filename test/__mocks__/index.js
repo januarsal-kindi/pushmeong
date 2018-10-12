@@ -4,30 +4,33 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+const mockdata =[
+    {
+        userId: 1,
+        id: 1,
+        title: 'hello world',
+        body: 'hello juga'
+    },
+    {
+        userId: 2,
+        id: 2,
+        title: 'hello mahfud',
+        body: 'hello jokowi'
+    },
+    {
+        userId: 1,
+        id: 3,
+        title: 'hello',
+        body: 'hello juga kamu'
+    },
+]
 export const getters = {
-    getposts: jest.fn().mockReturnValue([
-        {
-            userId: 1,
-            id: 1,
-            title: 'hello world',
-            body: 'hello juga'
-        },
-        {
-            userId: 2,
-            id: 2,
-            title: 'hello mahfud',
-            body: 'hello jokowi'
-        },
-        {
-            userId: 1,
-            id: 3,
-            title: 'hello',
-            body: 'hello juga kamu'
-        },
-    ]),
-    getpostcount: jest.fn().mockReturnValue(3),
 
-    getisloadingpost: jest.fn().mockReturnValue(true),
+    getPostCount: jest.fn().mockReturnValue(mockdata.length),
+
+    getPosts: jest.fn().mockReturnValue(mockdata),
+
+    getIsLoadingPost: jest.fn().mockReturnValue(true),
 
 };
 

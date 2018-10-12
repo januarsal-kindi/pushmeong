@@ -4,7 +4,7 @@
             <b-col> </b-col>
             <b-col cols="6">
               <app-input-feed></app-input-feed>
-              <app-card class="item" v-for="(post, index) in getposts" :post = "post"  :key="index"></app-card>
+              <app-card class="item" v-for="(post, index) in getPosts" :post = "post"  :key="index"></app-card>
             </b-col>
             <b-col></b-col>
         </b-row>
@@ -25,9 +25,9 @@ export default {
   },
    computed: {
     ...mapGetters([
-     'getpostcount',
-     'getposts',
-      'getisloadingpost'
+     'getPostCount',
+     'getPosts',
+      'getIsLoadingPost'
     ]),
     wqwq(){
       return 0
