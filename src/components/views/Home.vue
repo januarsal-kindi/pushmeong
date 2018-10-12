@@ -20,7 +20,7 @@ import { FETCH_POST,GET_POST,GET_POST_COUNT,GET_POST_IS_LOADING } from '../../st
 export default {
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js Axcvpp'
     }
   },
    computed: {
