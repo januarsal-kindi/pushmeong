@@ -4,7 +4,8 @@ import { PostsServices } from "../../config/ApiServices";
 const state = {
   posts: [],
   isLoading: true,
-  postCount: 0
+  postCount: 0,
+  isError : {status: false ,message: ""}
 };
 
 const getters = {
@@ -16,6 +17,9 @@ const getters = {
   },
   getIsLoadingPost(state) {
     return state.isLoading;
+  },
+  getIsError(state){
+    return state.isError
   }
 };
 
@@ -25,9 +29,11 @@ const actions = {
     return PostsServices.get('')
       .then(({ data }) => {
         commit("MUTATE_SET_POST", {posts : data, posstCount: data.length});
+        commit("MUTATE_ERROR_FETCH_POSTS",{status: false ,message: ""});
+
       })
       .catch(error => {
-        throw new Error(error);
+        commit("MUTATE_ERROR_FETCH_POSTS",{status: true ,message: "Something wrong"});
       });
   },
   addPostAction({commit},post){
@@ -47,6 +53,11 @@ const mutations = {
     state.posts = posts;
     state.postCount = posstCount;
     state.isLoading = false;
+  },
+  MUTATE_ERROR_FETCH_POSTS(state,message){
+    state.isError = message,
+    state.isLoading = false;
+
   }
 };
 

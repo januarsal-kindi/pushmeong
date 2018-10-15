@@ -5,7 +5,6 @@ describe('heloo',()=>{
     const wrapper = mount(HelloComponent)
     wrapper.setData({msg : message})
 
-
     it('h1 must be equal with  message',()=>{
         expect(wrapper.find('h1').text()).toBe(message)
     })

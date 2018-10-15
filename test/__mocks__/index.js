@@ -27,10 +27,10 @@ const mockdata =[
 export const getters = {
 
     getPostCount: jest.fn().mockReturnValue(mockdata.length),
-
     getPosts: jest.fn().mockReturnValue(mockdata),
+    getIsLoadingPost: jest.fn().mockReturnValue(false),
+    getIsError:jest.fn().mockReturnValue({status: false ,message: ""})
 
-    getIsLoadingPost: jest.fn().mockReturnValue(true),
 
 };
 
@@ -38,38 +38,22 @@ export const mutations = {
     FETCH_START: jest.fn(),
     MUTATE_ADD_POST: jest.fn(),
     MUTATE_SET_POST: jest.fn(),
+    MUTATE_ERROR_FETCH_POSTS: jest.fn()
 };
 
 export const actions = {
-    fetchpost: jest.fn(),
-    getposts: jest.fn(),
+    fetchPost: jest.fn(),
+    getPosts: jest.fn(),
     addPostAction: jest.fn()
 
 };
 
 export const state = {
-    posts: [
-        {
-            userId: 1,
-            id: 1,
-            title: 'hello world',
-            body: 'hello juga'
-        },
-        {
-            userId: 2,
-            id: 2,
-            title: 'hello mahfud',
-            body: 'hello jokowi'
-        },
-        {
-            userId: 1,
-            id: 3,
-            title: 'hello',
-            body: 'hello juga kamu'
-        },
-    ],
+    posts:mockdata,
     isLoading: true,
-    postCount: 0
+    postCount: mockdata.length,
+    isError : {status: false ,message: ""}
+
 };
 
 // eslint-disable-next-line no-underscore-dangle

@@ -31,7 +31,7 @@ describe('inputFeed', () => {
 
 
     it('calls button meong', () => {
-        const wrapper = shallowMount(InputFeed, { store, localVue, });
+        const wrapper = shallowMount(InputFeed, { store, localVue });
         wrapper.find('button').trigger('click');
         expect(actions.addPostAction).toHaveBeenCalled();
     })
